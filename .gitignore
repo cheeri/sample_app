@@ -14,3 +14,19 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# ignore other unneeded files
+
+database.yml
+doc/
+*.swp
+*~
+.project
+.DS_Store
+.idea
+.secret
+
+
+
+# Ignore the secret file
+secret_token.rb
