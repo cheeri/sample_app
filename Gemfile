@@ -5,7 +5,9 @@ ruby '2.0.0'
 
 
 gem 'rails', '4.0.3'
+gem 'bootstrap-sass', '2.3.2.0'
 gem 'pg', '0.15.1'
+gem 'sprockets', '2.11.0'
 
 group:development, :test do
    gem 'rspec-rails','2.13.1'
@@ -21,7 +23,7 @@ end
 
   
 
-gem 'sass-rails', '4.0.1'
+gem 'sass-rails', '4.0.2'
 
 gem 'uglifier', '2.1.1'
 

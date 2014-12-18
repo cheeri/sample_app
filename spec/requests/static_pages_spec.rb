@@ -1,64 +1,33 @@
 require 'spec_helper'
 
 describe "StaticPages" do
+  include Rails.application.routes.url_helpers
   let(:base_title) {"Ruby on Rails Tutorial Sample App"}
+
+  subject { page }  
+
   describe "Home page" do
-    it "Should have the content SampleApp" do
-      visit'/static_pages/home'
-      expect(page).to have_content('Sample App') 
-
-    end
-    
-    it "should have title 'Home'" do
-      visit'/static_pages/home'
-      expect(page).to have_title("Home") 
-
-    end
+    before {visit root_path}
+    it {should have_content('Sample App')}
+    it {should have_title('Sample')}  
   end
-
   describe "Help page" do
-    it "Should have the content 'Help'" do
-      visit'/static_pages/help'
-      expect(page).to have_content('Help') 
-
-    end
+    before {visit help_path}
+    it {should have_content('Help')}
+    it {should have_title('Help')}  
+  end
+  describe "About page" do
+    before {visit about_path}
+    it {should have_content('About')}
+    it {should have_title('About')}  
     
-    it "should have title 'Help'" do
-      visit'/static_pages/help'
-      expect(page).to have_title("Help") 
+  end
+  describe "Contact" do
+    before {visit contact_path}
+    it {should have_content('Contact')}
+    it {should have_title('Contact')}  
     
-    end
   end
   
- describe "About page" do
-    it "Should have the content 'About Us'" do
-      visit'/static_pages/about'
-      expect(page).to have_content('About us') 
-    end
-
-    it "Should have title 'About Us'" do
-	   
-      visit'/static_pages/about'
-      expect(page).to have_title("About Us") 
-    
-     end
-  end
-
-
- describe "Contact" do
-    it "Should have the content 'Contact'" do
-      visit'/static_pages/Contact'
-      expect(page).to have_content('Contact') 
-    end
-
-    it "Should have title 'Contact'" do
-	   
-      visit'/static_pages/Contact'
-      expect(page).to have_title("Contact") 
-    
-     end
-
-   end	
-
 
 end
